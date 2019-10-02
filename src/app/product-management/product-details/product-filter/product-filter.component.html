@@ -1,0 +1,61 @@
+<div class="filterrow">
+  <div class= "filtercol">
+          <mat-form-field>
+                  <mat-label>Search By</mat-label>
+                  <mat-select >
+                    <mat-option *ngFor="let fitem of options" [value]="fitem.field" >
+                      {{fitem.field}}
+                    </mat-option>
+                  </mat-select>
+          </mat-form-field>
+  </div>
+  <div class= "filtercol">
+          <mat-form-field>
+                  <mat-label>Product Code</mat-label>
+                  <mat-select >
+                    <mat-option *ngFor="let pCode of productCodes" [value]="pCode.code" >
+                      {{pCode.code}}
+                    </mat-option>
+                  </mat-select>
+          </mat-form-field>
+  </div>
+  <div class= "filtercol">
+          <mat-form-field>
+                  <mat-label>Model</mat-label>
+                  <mat-select >
+                    <mat-option *ngFor="let model of modelNumbers" [value]="model.modelNo" >
+                      {{model.modelNo}}
+                    </mat-option>
+                  </mat-select>
+          </mat-form-field>
+  </div>
+  <div class= "filtercol">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker1" placeholder="From" [value]="date.value">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class= "filtercol">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker2" placeholder="To"
+      [value]="date.value">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="container">
+    <div class="button3">
+      <button class="button3-content">SEARCH</button>
+    </div>
+    <p>Click me!</p>
+  </div>
+
+</div>
+
+<div>
+
+
+
+
