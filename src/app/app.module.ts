@@ -10,6 +10,7 @@ import { MatFormFieldModule,MatSelectModule,MatInputModule,
         MatDatepickerModule,MatNativeDateModule} from '@angular/material';
   import {MatTableModule} from '@angular/material/table';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ProductModule,
     AppRoutingModule,
     FormsModule,

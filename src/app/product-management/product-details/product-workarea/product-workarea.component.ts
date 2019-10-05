@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { ProductManagementService } from '../../shared/service/product-management.service';
 
 
 export interface PeriodicElement {
@@ -60,10 +62,18 @@ let ELEMENT_DATA:PeriodicElement[] = [
 export class ProductWorkareaComponent implements OnInit {
   displayedColumns: string[] = ['No','productCode', 'modelNumber', 'productType', 'productNumber'];
   dataSource = ELEMENT_DATA;
+  productManagementService : ProductManagementService;
 
-  constructor() { }
+  constructor( productManagementService : ProductManagementService) { 
+  this.productManagementService=productManagementService;
+  }
 
   ngOnInit() {
+    this.productManagementService.authenticate().subscribe(data =>{
+
+      console.log(data);
+    });
   }
+
 
 }

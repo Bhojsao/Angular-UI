@@ -8,18 +8,19 @@ import { ProductWorkareaComponent } from './product-details/product-workarea/pro
 import { ProductFooterComponent } from './product-details/product-footer/product-footer.component';
 import { MatFormFieldModule,MatSelectModule,MatInputModule,MatDatepickerModule } from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
+import { ProductManagementService } from './shared/service/product-management.service';
 
 
 @NgModule({
   declarations: [ProductDetailsComponent, CalendarComponent, ProductHeaderComponent, ProductFilterComponent, ProductWorkareaComponent, ProductFooterComponent],
   imports: [
     CommonModule,
-
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
     MatDatepickerModule,
     MatTableModule
-  ]
+  ],
+  providers:[ProductManagementService]
 })
 export class ProductModule { }
