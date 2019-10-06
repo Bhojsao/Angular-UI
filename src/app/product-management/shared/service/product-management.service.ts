@@ -12,16 +12,29 @@ export class ProductManagementService {
 
   }
 
- private userUrl = '/SpringBootFlyway/channel/getAllChannel';
- //private userUrl = '/SpringBootEnvers/parcel/getAllParcel';
+ private flywayUrl = '/SpringBootFlyway/channel/getAllChannel';
+ private enversUrl = '/SpringBootEnvers/parcel/getAllParcel';
 
-  authenticate() : Observable<any>{
+ SpringBootFlyway() : Observable<any>{
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
     headers.append('Access-Control-Allow-Methods', '*');
 
-    return this.http.get(this.userUrl, {headers})
+    return this.http.get(this.flywayUrl, {headers})
+      .pipe(map((res:HttpResponse<any>)=> {
+           console.log(res);
+           return res;
+        }));     
+  }
+
+  SpringBootEnvers() : Observable<any>{
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Access-Control-Allow-Methods', '*');
+
+    return this.http.get(this.enversUrl, {headers})
       .pipe(map((res:HttpResponse<any>)=> {
            console.log(res);
            return res;

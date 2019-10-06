@@ -69,8 +69,11 @@ export class ProductWorkareaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productManagementService.authenticate().subscribe(data =>{
+    this.productManagementService.SpringBootFlyway().subscribe(data =>{
+      console.log(data);
+    });
 
+    this.productManagementService.SpringBootEnvers().subscribe(data =>{
       console.log(data);
     });
   }
