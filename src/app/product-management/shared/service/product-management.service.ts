@@ -12,8 +12,8 @@ export class ProductManagementService {
 
   }
 
-  private userUrl = '../SpringBootFlyway/channel/getAllChannel';
- // private userUrl = 'http://localhost:9090/SpringBootFlyway/channel/getAllChannel';
+ private userUrl = '/SpringBootFlyway/channel/getAllChannel';
+ //private userUrl = '/SpringBootEnvers/parcel/getAllParcel';
 
   authenticate() : Observable<any>{
     let headers = new HttpHeaders();
