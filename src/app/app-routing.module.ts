@@ -18,8 +18,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    HomeComponent
+
   ],
   imports: [
     RouterModule.forRoot(appRoutes,{onSameUrlNavigation:'reload'}),

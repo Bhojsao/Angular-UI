@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Login } from './login';
+import { LoginService } from './login.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
- 
-  constructor() { 
+  private userName : String='';
+  private password : String='';
+
+  login:Login;
+ // loginService :LoginService;
+  constructor(private loginService:LoginService) { 
     
   }
   ngOnInit(): void {
-    //this.router.navigate(['/login']);
+    this.login=new Login();
   }
 
+  onSubmit(){
+    console.log(this.login.userName);
+    console.log(this.login.password);
+    this.loginService.createLoginDetails(this.login).subscribe(data =>{
+      console.log(data);
+    });
+  }
+
+ 
 }
