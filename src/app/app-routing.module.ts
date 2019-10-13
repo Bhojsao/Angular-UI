@@ -5,6 +5,7 @@ import { ProductDetailsComponent } from './product-management/product-details/pr
 import {LoginComponent} from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProductModule } from './product-management/product.module';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 export function getDefaultRoute(mode :any) : string{
   return mode ? '/home':'/login';
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
   { path: ' ', redirectTo: getDefaultRoute(true), pathMatch:'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignUpComponent },
   { path: 'product', component: ProductDetailsComponent },
 ];
 
